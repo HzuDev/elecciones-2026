@@ -1,16 +1,14 @@
-# Dependencias
 node_modules/
 dist/
 
-# Carpetas ocultas de herramientas
 .astro/
 .agents/
-.github/
+.github/skills/
 
-# Ocultar específicamente la subcarpeta skills
-.vscode/skills/
+.vscode
 
-# Archivos de entorno (Seguridad)
 .env
 .env.*
 !.env.example
+
+.gitignore
