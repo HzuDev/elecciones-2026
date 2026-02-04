@@ -1,6 +1,14 @@
-node_modules
-agents
-astro
-github
-vscode
-dist
+# Dependencias
+node_modules/
+dist/
+
+# Carpetas ocultas de herramientas
+.astro/
+.vscode/
+.github/
+.agents/
+
+# Archivos de entorno (Seguridad)
+.env
+.env.*
+!.env.example
