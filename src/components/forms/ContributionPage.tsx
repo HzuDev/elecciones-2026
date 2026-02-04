@@ -3,6 +3,7 @@ import { getAllForms } from '../../config/forms';
 import { DynamicForm } from './DynamicForm';
 import { ArrowLeft, UserPlus, Building2, TrendingUp, MapPin, Plus, Shield, BarChart3 } from 'lucide-react';
 import { useAuth } from '../../lib/auth-context';
+import { getPath } from '../../config/site';
 
 export function ContributionPage() {
   const { isAuthenticated, isGuest } = useAuth();
@@ -22,7 +23,7 @@ export function ContributionPage() {
             Necesitas tener una cuenta verificada para agregar datos electorales al sistema
           </p>
           <a
-            href="/login"
+            href={getPath('/login')}
             className="inline-block px-8 py-4 bg-blue-600 text-white rounded-2xl font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-200"
           >
             Ir al Login

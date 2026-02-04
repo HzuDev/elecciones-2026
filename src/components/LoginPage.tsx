@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { AuthProvider, useAuth } from '../lib/auth-context';
 import { Shield, X, Loader2 } from 'lucide-react';
+import { getPath } from '../config/site';
 
 function LoginFormContent() {
   const { login, register, loginAsGuest, isLoading } = useAuth();
@@ -22,14 +23,14 @@ function LoginFormContent() {
         }
         const result = await register(email, password, name);
         if (result.success) {
-          window.location.href = '/';
+          window.location.href = getPath('/');
         } else {
           setError(result.error || 'Error al registrar cuenta');
         }
       } else {
         const result = await login(email, password);
         if (result.success) {
-          window.location.href = '/';
+          window.location.href = getPath('/');
         } else {
           setError(result.error || 'Missing account scope. Verifica tu conexión.');
         }
@@ -46,7 +47,7 @@ function LoginFormContent() {
     try {
       const result = await loginAsGuest();
       if (result.success) {
-        window.location.href = '/';
+        window.location.href = getPath('/');
       } else {
         setError(result.error || 'Error al iniciar sesión de invitado');
       }
@@ -190,7 +191,7 @@ function LoginFormContent() {
             </form>
 
             <footer className="mt-10 pt-8 border-t border-slate-100 flex flex-col sm:flex-row justify-between gap-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
-              <a href="/" className="hover:text-blue-600 transition-colors">
+              <a href={getPath('/')} className="hover:text-blue-600 transition-colors">
                 ¿Olvidaste tu clave?
               </a>
               <div className="flex gap-4">

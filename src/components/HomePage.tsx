@@ -3,6 +3,7 @@ import { useCompleteElectionData } from '../hooks/useAppwriteData';
 import { useAuth } from '../lib/auth-context';
 import { Loader2, ArrowRight, Plus, Users, TrendingUp, MapPin, Lock } from 'lucide-react';
 import SkeletonHome from './ui/skeleton-home';
+import { getPath } from '../config/site';
 
 export function HomePage() {
   const { stats, loading, error } = useCompleteElectionData();
@@ -54,13 +55,13 @@ export function HomePage() {
               <h2 className="text-3xl font-bold leading-tight max-w-md">Explora la base de datos de candidatos más completa.</h2>
               <div className="mt-6 flex gap-3">
                 <a 
-                  href="/explorar" 
+                  href={getPath('/explorar')}
                   className="bg-blue-600 text-white px-8 py-3 rounded-full font-bold text-sm hover:bg-blue-700 shadow-lg shadow-blue-200 transition-all inline-block"
                 >
                   Explorar Ahora
                 </a>
                 <button 
-                  onClick={() => window.location.href = '/explorar'}
+                  onClick={() => window.location.href = getPath('/explorar')}
                   className="bg-slate-50 text-slate-700 border border-slate-200 px-8 py-3 rounded-full font-bold text-sm hover:bg-white transition-all"
                 >
                   Ver Mapa
@@ -73,7 +74,7 @@ export function HomePage() {
           {/* Contribuir Card */}
           {isAuthenticated && !isGuest ? (
             <a 
-              href="/contribuir"
+              href={getPath('/contribuir')}
               className="md:col-span-1 md:row-span-1 bg-blue-600 rounded-[2.5rem] p-8 text-white flex flex-col justify-between shadow-xl shadow-blue-100 group hover:bg-blue-700 transition-colors cursor-pointer"
             >
               <div className="flex justify-between items-start">
@@ -97,7 +98,7 @@ export function HomePage() {
               <div>
                 <h3 className="text-xl font-bold text-slate-700">Contribuir</h3>
                 <p className="text-slate-500 text-sm mt-1">
-                  <a href="/login" className="text-blue-600 hover:underline font-semibold">Inicia sesión</a> para contribuir con datos
+                  <a href={getPath('/login')} className="text-blue-600 hover:underline font-semibold">Inicia sesión</a> para contribuir con datos
                 </p>
               </div>
               <div className="absolute inset-0 bg-slate-300/20 "></div>
@@ -106,7 +107,7 @@ export function HomePage() {
 
           {/* Candidatos Card */}
           <a
-            href="/explorar"
+            href={getPath('/explorar')}
             className="md:col-span-1 md:row-span-2 bg-slate-900 rounded-[2.5rem] p-8 text-white flex flex-col group overflow-hidden relative cursor-pointer hover:bg-slate-800 transition-colors"
           >
             <div className="z-10 h-full flex flex-col justify-between">

@@ -1,5 +1,6 @@
 import { useAuth } from '../lib/auth-context';
 import { LogOut, Home, User as UserIcon } from 'lucide-react';
+import { getPath } from '../config/site';
 
 export function NavBar() {
   const { user, isAuthenticated, isGuest, logout, isLoading } = useAuth();
@@ -7,20 +8,20 @@ export function NavBar() {
   const handleLogout = async () => {
     const result = await logout();
     if (result.success) {
-      window.location.href = '/';
+      window.location.href = getPath('/');
     }
   };
 
   const currentPath = typeof window !== 'undefined' ? window.location.pathname : '/';
-  const isExplorePage = currentPath === '/explorar';
-  const isContributePage = currentPath === '/contribuir';
+  const isExplorePage = currentPath.includes('/explorar');
+  const isContributePage = currentPath.includes('/contribuir');
 
   return (
     <nav className="fixed top-4 md:top-8 left-0 right-0 z-50 px-4 md:px-6">
       <div className="max-w-6xl mx-auto bg-white border border-slate-200 rounded-[2rem] md:rounded-[2.5rem] px-4 md:px-8 py-3 md:py-4 flex items-center justify-between shadow-xl shadow-slate-100">
         
         {/* Logo */}
-        <a href="/" className="flex items-center gap-4 group">
+        <a href={getPath('/')} className="flex items-center gap-4 group">
           <div className="w-11 h-11 bg-slate-900 rounded-[1.2rem] flex items-center justify-center shadow-lg group-hover:bg-blue-600 transition-colors">
             <Home className="w-6 h-6 text-white" strokeWidth={2.5} />
           </div>
@@ -37,7 +38,7 @@ export function NavBar() {
         {/* Navigation Tabs */}
         <div className="flex bg-slate-50 p-1.5 rounded-2xl border border-slate-100">
           <a 
-            href="/explorar" 
+            href={getPath('/explorar')}
             className={`px-6 py-2 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${
               isExplorePage 
                 ? 'bg-white text-blue-600 shadow-sm border border-slate-200' 
@@ -48,7 +49,7 @@ export function NavBar() {
           </a>
           {isAuthenticated && !isGuest ? (
             <a 
-              href="/contribuir" 
+              href={getPath('/contribuir')}
               className={`px-6 py-2 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${
                 isContributePage 
                   ? 'bg-white text-blue-600 shadow-sm border border-slate-200' 
@@ -97,7 +98,7 @@ export function NavBar() {
             </>
           ) : (
             <a 
-              href="/login"
+              href={getPath('/login')}
               className="flex items-center gap-3 px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl text-xs font-black uppercase tracking-widest transition-all shadow-lg shadow-blue-100"
             >
               <UserIcon className="w-4 h-4" strokeWidth={2.5} />
