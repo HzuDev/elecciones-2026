@@ -5,7 +5,7 @@ import react from "@astrojs/react";
 
 export default defineConfig({
   // Asegúrate de que estas dos líneas estén así:
-  site: 'https://hzudev.github.io',
+  site: 'https://hzudev.github.io/elecciones-2026/',
   base: '/elecciones-2026',
   trailingSlash: 'always',
 

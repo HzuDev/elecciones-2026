@@ -87,7 +87,7 @@ function LoginFormContent() {
                   <div className="w-7 h-7 rounded-full bg-blue-500 border-2 border-slate-950"></div>
                   <div className="w-7 h-7 rounded-full bg-teal-500 border-2 border-slate-950"></div>
                 </div>
-                <span className="text-slate-400 text-[11px] font-bold uppercase tracking-widest">+1.2k Voluntarios</span>
+                <span className="text-slate-400 text-[11px] font-bold uppercase tracking-widest">Se parte de este proyecto siendo voluntario!</span>
               </div>
             </div>
             <div className="absolute top-0 right-0 p-10 opacity-10 group-hover:rotate-12 transition-transform duration-500">
