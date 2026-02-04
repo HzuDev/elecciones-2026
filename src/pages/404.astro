@@ -1,0 +1,38 @@
+---
+// 404 page - Redirige automáticamente
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirigiendo...</title>
+  <script>
+    // Redirigir manteniendo la ruta original
+    const base = '/elecciones-2026';
+    const path = window.location.pathname.replace(base, '');
+    const redirect = base + path + (path.endsWith('/') ? '' : '/');
+    
+    // Si la URL ya tiene el formato correcto, no hacer nada
+    if (window.location.pathname === redirect) {
+      // Mostrar mensaje de error 404
+      document.body.innerHTML = `
+        <div style="display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: system-ui;">
+          <div style="text-align: center;">
+            <h1 style="font-size: 4rem; font-weight: bold; color: #3b82f6;">404</h1>
+            <p style="color: #64748b; margin: 1rem 0;">Página no encontrada</p>
+            <a href="${base}/" style="color: #3b82f6; text-decoration: none; font-weight: 600;">← Volver al inicio</a>
+          </div>
+        </div>
+      `;
+    } else {
+      window.location.replace(redirect);
+    }
+  </script>
+</head>
+<body>
+  <div style="display: flex; align-items: center; justify-content: center; min-height: 100vh;">
+    <p style="color: #64748b;">Redirigiendo...</p>
+  </div>
+</body>
+</html>
