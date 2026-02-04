@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState, useMemo } from 'react';
-import { Map } from '@/components/ui/map';
+import { Map } from '../components/ui/map';
 import maplibregl from 'maplibre-gl';
 import { LocationBadges } from './LocationBadges';
 import { MapControls } from './map/MapControls';
 import { MapInfoOverlay } from './map/MapInfoOverlay';
 import { useGeolocation } from './map/useGeolocation';
-import { useLocations } from '@/hooks/useAppwriteData';
+import { useLocations } from '../hooks/useAppwriteData';
 import {
   findFeatureAtLocation,
   highlightFeature,
@@ -52,11 +52,11 @@ export function DashboardMapa({ onLocationFilter }: MapDashboardProps) {
     if (locations.length === 0) return null;
 
     return {
-      type: 'FeatureCollection',
+      type: 'FeatureCollection' as const,
       features: locations
         .filter(loc => loc.geometry && loc.geometry.length > 0)
         .map(loc => ({
-          type: 'Feature',
+          type: 'Feature' as const,
           properties: {
             nombre: loc.name,
             codigo: loc.INE_code,
@@ -64,7 +64,7 @@ export function DashboardMapa({ onLocationFilter }: MapDashboardProps) {
             parent: loc.parent || ''
           },
           geometry: {
-            type: 'Polygon',
+            type: 'Polygon' as const,
             coordinates: loc.geometry
           }
         }))

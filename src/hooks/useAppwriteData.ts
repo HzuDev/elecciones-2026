@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { databases } from '@/lib/appwrite-client';
+import { databases } from '../lib/appwrite-client';
 import type { Models } from 'appwrite';
 
 const DATABASE_ID = '6977a82d000f96ceae0f';

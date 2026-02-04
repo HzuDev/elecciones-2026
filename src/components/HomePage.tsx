@@ -27,15 +27,15 @@ export function HomePage() {
   }
 
   return (
-    <div className="bg-[#F8FAFC] text-slate-900 antialiased min-h-screen pt-24 md:pt-32">
-      <main className="max-w-7xl mx-auto p-4 md:p-10">
+    <div className="bg-[#F8FAFC] text-slate-900 antialiased min-h-screen pt-20 md:pt-28 lg:pt-32">
+      <main className="max-w-7xl mx-auto p-4 md:p-8 lg:p-10">
         
         {/* Header */}
-        <header className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-4">
-          <div>
-            <span className="text-blue-600 font-bold tracking-[0.2em] text-xs uppercase">Bolivia Transparente</span>
-            <h1 className="text-5xl font-extrabold tracking-tighter mt-2">Elecciones <span className="text-slate-400">2026</span></h1>
-            <p className="text-slate-500 font-medium mt-1 italic">Plataforma colaborativa de datos electorales</p>
+          <header className="mb-8 md:mb-10 lg:mb-12 flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <div>
+              <span className="text-blue-600 font-bold tracking-[0.2em] text-[10px] md:text-[11px] lg:text-xs uppercase">Bolivia Transparente</span>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tighter mt-2">Elecciones <span className="text-slate-400">2026</span></h1>
+              <p className="text-slate-500 font-medium mt-1 text-sm md:text-[15px] lg:text-base italic">Plataforma colaborativa de datos electorales</p>
           </div>
           <div className="hidden md:block text-right">
             <span className="text-xs font-bold text-slate-400 uppercase">Estado del Sistema</span>
@@ -50,19 +50,19 @@ export function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[200px]">
 
           {/* Hero Card - Explorar */}
-          <div className="md:col-span-3 md:row-span-1 bg-white border border-slate-200 rounded-[2.5rem] p-8 flex flex-col justify-center relative overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <div className="md:col-span-3 md:row-span-1 bg-white border border-slate-200 rounded-[2rem] lg:rounded-[2.5rem] p-6 md:p-7 lg:p-8 flex flex-col justify-center relative overflow-hidden shadow-sm hover:shadow-md transition-shadow">
             <div className="relative z-10">
-              <h2 className="text-3xl font-bold leading-tight max-w-md">Explora la base de datos de candidatos más completa.</h2>
-              <div className="mt-6 flex gap-3">
+              <h2 className="text-xl md:text-2xl lg:text-3xl font-bold leading-tight max-w-md">Explora la base de datos de candidatos más completa.</h2>
+              <div className="mt-4 md:mt-5 lg:mt-6 flex flex-col sm:flex-row gap-3">
                 <a 
                   href={getPath('/explorar')}
-                  className="bg-blue-600 text-white px-8 py-3 rounded-full font-bold text-sm hover:bg-blue-700 shadow-lg shadow-blue-200 transition-all inline-block"
+                  className="bg-blue-600 text-white px-6 md:px-7 lg:px-8 py-2.5 lg:py-3 rounded-full font-bold text-xs md:text-[13px] lg:text-sm hover:bg-blue-700 shadow-lg shadow-blue-200 transition-all text-center"
                 >
                   Explorar Ahora
                 </a>
                 <button 
                   onClick={() => window.location.href = getPath('/explorar')}
-                  className="bg-slate-50 text-slate-700 border border-slate-200 px-8 py-3 rounded-full font-bold text-sm hover:bg-white transition-all"
+                  className="bg-slate-50 text-slate-700 border border-slate-200 px-6 md:px-7 lg:px-8 py-2.5 lg:py-3 rounded-full font-bold text-xs md:text-[13px] lg:text-sm hover:bg-white transition-all"
                 >
                   Ver Mapa
                 </button>
