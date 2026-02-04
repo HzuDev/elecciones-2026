@@ -4,9 +4,11 @@ dist/
 
 # Carpetas ocultas de herramientas
 .astro/
-.vscode/
-.github/
 .agents/
+.github/
+
+# Ocultar específicamente la subcarpeta skills
+.vscode/skills/
 
 # Archivos de entorno (Seguridad)
 .env
