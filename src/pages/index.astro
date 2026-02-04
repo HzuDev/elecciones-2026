@@ -1,0 +1,8 @@
+---
+import RootLayout from '../layouts/RootLayout.astro';
+import { DashboardWrapper } from '../components/DashboardWrapper';
+---
+
+<RootLayout title="Elecciones Subnacionales Bolivia 2026">
+	<DashboardWrapper client:only="react" page="home" />
+</RootLayout>

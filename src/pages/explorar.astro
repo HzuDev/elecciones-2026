@@ -1,0 +1,8 @@
+---
+import RootLayout from '../layouts/RootLayout.astro';
+import { DashboardWrapper } from '../components/DashboardWrapper';
+---
+
+<RootLayout title="Explorador Electoral - Elecciones 2026">
+  <DashboardWrapper client:only="react" page="explorar" />
+</RootLayout>

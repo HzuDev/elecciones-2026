@@ -1,0 +1,14 @@
+---
+
+import { CandidateCard as CandidateCardReact } from './CandidateCard';
+import type { Candidato } from '@/types/candidatos';
+
+interface Props {
+  candidato: Candidato;
+}
+
+const { candidato } = Astro.props;
+---
+
+<CandidateCardReact candidato={candidato} client:load />
+</article>

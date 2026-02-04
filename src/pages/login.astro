@@ -1,0 +1,8 @@
+---
+import RootLayout from '../layouts/RootLayout.astro';
+import { LoginPage } from '../components/LoginPage';
+---
+
+<RootLayout title="Iniciar Sesión - Elecciones 2026">
+  <LoginPage client:only="react" />
+</RootLayout>

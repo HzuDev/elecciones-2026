@@ -1,0 +1,33 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { title = 'Elecciones Subnacionales Bolivia 2026', description = 'Análisis de datos electorales subnacionales en Bolivia para las elecciones de 2026.' } = Astro.props;
+---
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	body { font-family: 'Inter', sans-serif; }
+	/* Scrollbar estilizado */
+	::-webkit-scrollbar { width: 8px; height: 8px; }
+	::-webkit-scrollbar-track { background: transparent; }
+	::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+	::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+</style>
