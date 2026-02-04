@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ] # Asegúrate de que tu rama se llame main o cámbialo a master
+    branches: [ main ]
   workflow_dispatch:
 
 permissions:
@@ -20,7 +20,7 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
-        version: 10.28.2 # Esto buscará la versión definida en tu package.json
+          version: 10 # Esto ahora está bien alineado bajo 'with'
 
       - name: Install, build, and upload
         uses: withastro/action@v3
